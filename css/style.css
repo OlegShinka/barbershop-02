@@ -1,0 +1,34 @@
+@import url("./null.css");
+
+body {
+  font-family: "Open sans", sans-serif;
+  min-height: 100%;
+  color: goldenrod;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Обрізає вміст, який виходить за межі елемента, без відображення смуг прокрутки. Це схоже на overflow: hidden;, але без можливості прокрутки. */
+  overflow: clip;
+}
+/* властивість flex-row розтягує main завжди на всю висоту вьюпрту, тим самим притискає footer донизу екрану */
+.wrapper > main {
+  flex-grow: 1;
+  width: 100%; /* Додано для заповнення ширини */
+}
+
+/* .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+} */
+
+/* селектор атрибуту класу,  */
+[class*="__container"] {
+  /* розширили контейнер на величину паддінгів зліва иа справа */
+  max-width: 1200px;
+  padding-inline: 15px;
+  margin: 0 auto;
+}
