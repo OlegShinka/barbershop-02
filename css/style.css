@@ -1,9 +1,12 @@
 @import url("./null.css");
 
 body {
-  font-family: "Open sans", sans-serif;
+  font-family: var(--font-main);
+  color: var(--main-txt-color);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.67;
   min-height: 100%;
-  color: goldenrod;
 }
 
 .wrapper {
@@ -28,7 +31,354 @@ body {
 /* селектор атрибуту класу,  */
 [class*="__container"] {
   /* розширили контейнер на величину паддінгів зліва иа справа */
-  max-width: 1200px;
+  max-width: 1170px;
   padding-inline: 15px;
   margin: 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+:root {
+  --font-main: Open Sans, sans-serif;
+  --font-secondary: Raleway, sans-serif;
+  --main-txt-clr: #555555;
+  --secondary-txt-clr: #303030;
+  --ligth-txt-clr: #ffffff;
+  --grey-txt-clr: #9da4bd;
+  --accent-txt-clr: #ff6c00;
+  --accent-bg-clr: #ff6c00;
+  --main-bg-clr: #ffffff;
+  --secondary-bg-clr: #111319;
+  --light-bg-clr: #f7f7f7;
+  --dark-bg-clr: #111319;
+}
+
+.btn {
+  display: block;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.33;
+  color: var(--secondary-txt-clr);
+  text-transform: uppercase;
+  width: 160px;
+  height: 40px;
+  padding: 12px 20px;
+  border: 1px solid var(--accent-bg-clr);
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.btn:hover,
+.hero__btn:focus {
+  background-color: var(--accent-bg-clr);
+  color: var(--ligth-txt-clr);
+}
+
+.btn-light {
+  color: var(--ligth-txt-clr);
+}
+
+[class*="__title"] {
+  font-family: Raleway;
+  font-weight: 700;
+  color: var(--secondary-txt-clr);
+  font-size: 42px;
+  line-height: 49px;
+  padding-bottom: 44px;
+}
+
+.uppertitle {
+  color: var(--secondary-txt-clr);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  text-transform: uppercase;
+}
+
+.slogan {
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--grey-txt-clr);
+  line-height: 1.67;
+}
+
+/* HEADER ------------------------------ */
+
+.header {
+}
+.header__container {
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__logo {
+}
+.header__menu {
+}
+.header__nav-list {
+  display: flex;
+  gap: 30px;
+}
+.nav-list {
+}
+.nav-list__item {
+}
+.nav-list__link {
+  font-family: Open Sans;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 1.1%;
+}
+
+.nav-list__link:hover,
+.nav-list__link:focus,
+.header-tel:hover,
+.header-tel:focus {
+  color: var(--accent-txt-clr);
+}
+
+.header-tel {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-right: 40px;
+}
+.header__btn {
+}
+
+/* HERO --------------------- */
+
+.hero {
+  background-color: var(--secondary-bg-clr);
+  background-image: url("../image/hero/hero-bg-img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 270px;
+  padding-bottom: 210px;
+  padding-left: 100px;
+  height: 680px;
+}
+.hero__social-list {
+  display: flex;
+  gap: 40px;
+}
+.hero__social-item {
+}
+.hero__social-link {
+  color: var(--secondary-txt-clr);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+}
+
+.hero__social-link:hover,
+.hero__social-link:focus {
+  color: var(--accent-txt-clr);
+}
+
+.hero__uppertitle {
+  color: var(--grey-txt-clr);
+  margin-bottom: 20px;
+}
+
+.hero__title {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--ligth-txt-clr);
+  margin-bottom: 20px;
+}
+
+.hero__text {
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--grey-txt-clr);
+  line-height: 1.67;
+  width: 360px;
+}
+
+.hero__btn-list {
+  display: flex;
+  gap: 24px;
+}
+
+.hero__btn {
+  display: block;
+  color: var(--grey-txt-clr);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  text-align: left;
+  width: 60px;
+}
+
+.btn-right {
+  text-align: right;
+}
+
+.hero__btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  background-color: var(--grey-txt-clr);
+  height: 1px;
+  width: 100%;
+}
+
+/* .hero__btn::after:hover {
+  background-color: var(--main-bg-clr);
+} */
+
+.hero__btn:hover,
+.hero__btn:focus {
+  color: var(--ligth-txt-clr);
+}
+.btn-hero_item {
+  position: relative;
+}
+
+/* ABOUT ------------------------- */
+
+.about {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  padding: 120px 0;
+  flex-basis: 470px;
+}
+.about__galerry {
+  display: flex;
+  gap: 30px;
+  flex-basis: 570px;
+}
+.about_content-block {
+  flex-basis: 470px;
+}
+.about__uppertitle {
+}
+
+.about__title {
+}
+
+.about__slogan {
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--grey-txt-clr);
+  line-height: 1.67;
+}
+.about__text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.86;
+}
+.header__btn {
+}
+.btn {
+}
+
+/* PRICES ------------------------- */
+
+.prices {
+  padding: 120px 0;
+  background-color: var(--dark-bg-clr);
+}
+.prices__uppertitle {
+  color: var(--grey-txt-clr);
+}
+
+.prices__title {
+  color: var(--ligth-txt-clr);
+}
+
+.prices__inner {
+}
+.prices-inner__item {
+}
+.prices__list {
+}
+.prices__item {
+  color: var(--grey-txt-clr);
+}
+.service-name {
+}
+.service-price {
+}
+.prices__info {
+}
+.prices__btn {
+  margin: 0 auto;
+}
+.btn {
+}
+
+/* BENEFITS ------------------------ */
+
+/* TEAM ---------------------------- */
+
+/* GALERRY ------------------------- */
+
+/* BOOKOING-CONTACTS ---------------- */
+
+.contacts__uppertitle {
+  color: var(--grey-txt-clr);
+}
+
+.contacts__adress {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.67;
+  color: var(--grey-txt-clr);
+}
+
+.contacts__tel,
+.contacts__email,
+.schedule__time {
+  font-size: 18px;
+  line-height: 1.67;
+  color: var(--grey-txt-clr);
+}
+
+/* FOOTER --------------------------- */
+
+.footer {
+}
+.footer__container {
+}
+.copyrigth-block {
+}
+.footer__copyright {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.37;
+  color: var(--grey-txt-clr);
+}
+.footer__social-list {
+}
+.footer__social-item {
+}
+.footer__social-link {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.37;
+  color: var(--grey-txt-clr);
 }

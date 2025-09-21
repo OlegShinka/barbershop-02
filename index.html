@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Barbershop</title>
-    <link rel="stylesheet" href="./css/style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
       rel="stylesheet"
@@ -13,18 +12,27 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic"
       rel="stylesheet"
     />
+    <!-- Custom style ----------------------------->
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <div class="wrapper">
       <header class="header">
         <div class="header__container header__inner">
-          <img
-            class="header__logo"
-            src="./image/header/logo.svg"
-            alt="logo"
-            width="76"
-            heigth="76"
-          />
+          <a
+            href="./index.html"
+            class="header__logo-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              class="header__logo"
+              src="./image/header/logo.svg"
+              alt="logo"
+              width="76"
+              heigth="76"
+            />
+          </a>
           <nav class="header__menu">
             <ul class="header__nav-list nav-list">
               <li class="nav-list__item">
@@ -41,13 +49,15 @@
               </li>
             </ul>
           </nav>
-          <a href="tel:=0381111111" class="header-tel">+38 044 111 11 11</a>
-          <button class="header__btn btn">Online-booking</button>
+          <div class="header__left-block">
+            <a href="tel:=0381111111" class="header-tel">+38 044 111 11 11</a>
+            <button class="header__btn btn">Online-booking</button>
+          </div>
         </div>
       </header>
       <main class="main">
         <!-- section Hero -->
-        <section class="hero__container">
+        <section class="hero__container hero">
           <ul class="hero__social-list">
             <li class="hero__social-item">
               <a
@@ -68,28 +78,48 @@
               >
             </li>
           </ul>
-          <div class="title-block">
-            <p class="hero__label label">A hair salon for men in Kyiv</p>
-            <h1 class="hero__title title">BarberShop</h1>
-          </div>
+          <p class="hero__uppertitle uppertitle">
+            A hair salon for men in Kyiv
+          </p>
+          <h1 class="hero__title title">BarberShop</h1>
           <p class="hero__text">
             We are experts in trendy men’s haircuts. We work quickly, carefully
             and with style.
           </p>
-          <button type="button" class="hero__btn">Back</button>
-          <button type="button" class="hero__btn">Forward</button>
+          <ul class="hero__btn-list">
+            <li class="btn-hero_item">
+              <button type="button" class="hero__btn">Back</button>
+            </li>
+            <li class="btn-hero_item">
+              <button type="button" class="hero__btn btn-light btn-right">
+                Forward
+              </button>
+            </li>
+          </ul>
         </section>
         <!-- section About -->
-        <section class="about__container">
+        <section class="about__container about">
           <ul class="about__galerry">
-            <li><img src="./image/about/img-1.jpg" alt="barber-image" /></li>
-            <li><img src="./image/about/img-2.jpg" alt="barber-image" /></li>
+            <li>
+              <img
+                src="./image/about/img-1.jpg"
+                alt="barber-image"
+                width="270"
+                height="445"
+              />
+            </li>
+            <li>
+              <img
+                src="./image/about/img-2.jpg"
+                alt="barber-image"
+                width="270"
+                height="445"
+              />
+            </li>
           </ul>
           <div class="about_content-block">
-            <div class="title-block">
-              <p class="about__label label">About</p>
-              <h2 class="about__title title">Best Barbershop in your city</h2>
-            </div>
+            <p class="about__uppertitle uppertitle">About</p>
+            <h2 class="about__title title">Best Barbershop in your city</h2>
             <h3 class="about__slogan">
               If you want to add more confidence to your image, you should visit
               us.
@@ -105,72 +135,64 @@
           </div>
         </section>
         <!-- section Prices -->
-        <section class="prices__container">
-          <div class="title-block">
-            <p class="prices__label label">
+        <section class="prices">
+          <div class="prices__container">
+            <p class="prices__uppertitle uppertitle">
               Spend your time with the best masters
             </p>
             <h2 class="prices__title title">Services and prices</h2>
-          </div>
-          <ul class="prices__inner">
-            <li class="prices-inner__item">
-              <ul class="prices__list">
-                <li class="prices__item">
-                  <div class="prices__info">
+            <ul class="prices__inner">
+              <li class="prices-inner__item">
+                <ul class="prices__list">
+                  <li class="prices__item">
                     <p class="service-name">Men’s haircut</p>
                     <p class="service-price">from 300 uah.</p>
-                  </div>
-                </li>
-                <li class="prices__item">
-                  <div class="prices__info">
+                  </li>
+                  <li class="prices__item">
                     <p class="service-name">Beard trim</p>
                     <p class="service-price"></p>
-                  </div>
-                </li>
-                <li class="prices__item">
-                  <div class="prices__info">
+                  </li>
+                  <li class="prices__item">
                     <p class="service-name">Mustache trim</p>
                     <p class="service-price">from 200 uah.</p>
-                  </div>
-                </li>
-                <li class="prices__item">
-                  <div class="prices__info">
+                  </li>
+                  <li class="prices__item">
                     <p class="service-name">Straight razor shave</p>
                     <p class="service-price">from 200 uah.</p>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <li class="prices-inner__item">
-              <ul class="prices__list">
-                <li class="prices__item">
-                  <div class="prices__info">
-                    <p class="service-name">Trainee’s haircut</p>
-                    <p class="service-price">from 50 uah.</p>
-                  </div>
-                </li>
-                <li class="prices__item">
-                  <div class="prices__info">
-                    <p class="service-name">Haircut under the nozzle</p>
-                    <p class="service-price">from 200 uah.</p>
-                  </div>
-                </li>
-                <li class="prices__item">
-                  <div class="prices__info">
-                    <p class="service-name">Children’s haircut (0-12 y.o.)</p>
-                    <p class="service-price">from 300 uah.</p>
-                  </div>
-                </li>
-                <li class="prices__item">
-                  <div class="prices__info">
-                    <p class="service-name">Camouflage of gray hair</p>
-                    <p class="service-price">from 200 uah.</p>
-                  </div>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <button class="header__btn btn">Online-booking</button>
+                  </li>
+                </ul>
+              </li>
+              <li class="prices-inner__item">
+                <ul class="prices__list">
+                  <li class="prices__item">
+                    <div class="prices__info">
+                      <p class="service-name">Trainee’s haircut</p>
+                      <p class="service-price">from 50 uah.</p>
+                    </div>
+                  </li>
+                  <li class="prices__item">
+                    <div class="prices__info">
+                      <p class="service-name">Haircut under the nozzle</p>
+                      <p class="service-price">from 200 uah.</p>
+                    </div>
+                  </li>
+                  <li class="prices__item">
+                    <div class="prices__info">
+                      <p class="service-name">Children’s haircut (0-12 y.o.)</p>
+                      <p class="service-price">from 300 uah.</p>
+                    </div>
+                  </li>
+                  <li class="prices__item">
+                    <div class="prices__info">
+                      <p class="service-name">Camouflage of gray hair</p>
+                      <p class="service-price">from 200 uah.</p>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <button class="btn-light btn prices__btn">Online-booking</button>
+          </div>
         </section>
         <!-- section Benefits -->
         <section class="benefits__container">
@@ -193,10 +215,10 @@
             </li>
           </ul>
           <div class="benefits__content-block">
-            <div class="title-block">
-              <p class="prices__label label">Old traditional school</p>
-              <h2 class="prices__title title">Why people come to us?</h2>
-            </div>
+            <p class="benefits__uppertitle uppertitle">
+              Old traditional school
+            </p>
+            <h2 class="benefits__title">Why people come to us?</h2>
             <h3 class="benefits__slogan">
               Only good things are said about us. But it's better to see and
               feel 1 time than read 10 times.
@@ -205,52 +227,48 @@
         </section>
         <!-- section Team -->
         <section class="team__container">
-          <div class="title-block">
-            <p class="about__label label">
-              For true enjoyers of the atmosphere
-            </p>
-            <h2 class="about__title title">Our barbers</h2>
-          </div>
-          <ul>
-            <li>
+          <p class="uppertitle">For true enjoyers of the atmosphere</p>
+          <h2 class="team__title">Our barbers</h2>
+          <ul class="team__list">
+            <li class="list-team__item">
               <img
                 src="./image/team/img-1_740.jpg"
                 alt=""
                 width="320"
                 height="320"
               />
-              <h3>John Smith</h3>
-              <p>Extreme Barber</p>
+              <h3 class="name-barber">John Smith</h3>
+              <p class="position-baarber">Extreme Barber</p>
               <ul class="social-list">
                 <li class="social-list__item">
                   <a href="#" class="social__link"><img src="" alt="" /></a>
                 </li>
               </ul>
             </li>
-            <li>
+            <li class="list-team__item">
               <img
                 src="./image/team/img-2_740.jpg"
                 alt=""
                 width="320"
                 height="320"
               />
-              <h3>Michele Doe</h3>
-              <p>Extreme Barber</p>
+              <h3 class="name-barber">Michele Doe</h3>
+              <p class="position-baarber">Extreme Barber</p>
               <ul class="social-list">
                 <li class="social-list__item">
                   <a href="#" class="social__link"><img src="" alt="" /></a>
                 </li>
               </ul>
             </li>
-            <li>
+            <li class="list-team__item">
               <img
                 src="./image/team/img-3_740.jpg"
                 alt=""
                 width="320"
                 height="320"
               />
-              <h3>Alan Black</h3>
-              <p>Extreme Barber</p>
+              <h3 class="name-barber">Alan Black</h3>
+              <p class="position-baarber">Extreme Barber</p>
               <ul class="social-list">
                 <li class="social-list__item">
                   <a href="#" class="social__link"><img src="" alt="" /></a>
@@ -261,7 +279,10 @@
         </section>
         <!-- section Galerry  -->
         <section class="galerry__container">
-          <p class="galerry__label label">In Latin, "barba" means "beard"</p>
+          <h2 class="gallerry__title visually-hidden">Our gallery</h2>
+          <p class="galerry__uppertitle uppertitle">
+            In Latin, "barba" means "beard"
+          </p>
           <ul class="galerry__list">
             <li class="list-galerry__item">
               <img
@@ -302,12 +323,14 @@
           <div class="booking-contacts__right">
             <h2 class="contacts__title">Contacts</h2>
             <adress class="contacts__info">
-              <a href="#" class="contacts__adress"></a>
-              <a href="#" class="contacts__tel"></a>
-              <a href="#" class="contacts__email"></a>
+              <a href="#" class="contacts__adress"
+                >st. Vasylkivska, 7A Kiev, 08132</a
+              >
+              <a href="#" class="contacts__tel">+38 044 111 11 11</a>
+              <a href="#" class="contacts__email">barbershop@email.com</a>
             </adress>
             <div class="schedule-info">
-              <h4 class="schedule__label">Working hours</h4>
+              <h3 class="contacts__uppertitle uppertitle">Working hours</h3>
               <p class="schedule__time">
                 Every day from <time datetime="09:00">9:00</time> to
                 <time datetime="09:00">22:00</time>
@@ -318,7 +341,9 @@
       </main>
       <footer class="footer">
         <div class="footer__container">
-          <div class="copyrigth-block">&copy; Copyright 2020</div>
+          <div class="copyrigth-block">
+            <p class="footer__copyright">&copy; Copyright 2020</p>
+          </div>
           <ul class="footer__social-list">
             <li class="footer__social-item">
               <a
