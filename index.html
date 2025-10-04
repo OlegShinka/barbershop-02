@@ -12,6 +12,14 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic"
       rel="stylesheet"
     />
+    <!-- Modern Normalize  ------------------------>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- Custom style ----------------------------->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
@@ -33,26 +41,22 @@
               heigth="76"
             />
           </a>
-          <nav class="header__menu">
-            <ul class="header__nav-list nav-list">
-              <li class="nav-list__item">
-                <a href="#" class="nav-list__link">About</a>
-              </li>
-              <li class="nav-list__item">
-                <a href="#" class="nav-list__link">Services and prices</a>
-              </li>
-              <li class="nav-list__item">
-                <a href="#" class="nav-list__link">Barbers</a>
-              </li>
-              <li class="nav-list__item">
-                <a href="#" class="nav-list__link">Contacts</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="header__left-block">
-            <a href="tel:=0381111111" class="header-tel">+38 044 111 11 11</a>
-            <button class="header__btn btn">Online-booking</button>
-          </div>
+          <ul class="header__nav-list nav-list">
+            <li class="nav-list__item">
+              <a href="#" class="nav-list__link">About</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="#" class="nav-list__link">Services and prices</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="#" class="nav-list__link">Barbers</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="#" class="nav-list__link">Contacts</a>
+            </li>
+          </ul>
+          <a href="tel:=0381111111" class="header-tel">+38 044 111 11 11</a>
+          <button class="header__btn btn">Online-booking</button>
         </div>
       </header>
       <main class="main">
@@ -120,10 +124,10 @@
           <div class="about_content-block">
             <p class="about__uppertitle uppertitle">About</p>
             <h2 class="about__title title">Best Barbershop in your city</h2>
-            <h3 class="about__slogan">
+            <p class="about__slogan">
               If you want to add more confidence to your image, you should visit
               us.
-            </h3>
+            </p>
             <p class="about__text">
               We are a team that never stops at what has been achieved and are
               thirsty for changes. And when you fall into the hands of our
@@ -142,50 +146,64 @@
             </p>
             <h2 class="prices__title title">Services and prices</h2>
             <ul class="prices__inner">
-              <li class="prices-inner__item">
+              <li class="prices-inner__item prices-left__item">
                 <ul class="prices__list">
                   <li class="prices__item">
-                    <p class="service-name">Men’s haircut</p>
-                    <p class="service-price">from 300 uah.</p>
+                    <p class="service">
+                      Men’s haircut <span class="price">from 300 uah.</span>
+                    </p>
                   </li>
                   <li class="prices__item">
-                    <p class="service-name">Beard trim</p>
-                    <p class="service-price"></p>
+                    <p class="service">
+                      Beard trim <span class="price">from 300 uah.</span>
+                    </p>
                   </li>
                   <li class="prices__item">
-                    <p class="service-name">Mustache trim</p>
-                    <p class="service-price">from 200 uah.</p>
+                    <p class="service">
+                      Mustache trim <span class="price">from 200 uah.</span>
+                    </p>
                   </li>
                   <li class="prices__item">
-                    <p class="service-name">Straight razor shave</p>
-                    <p class="service-price">from 200 uah.</p>
+                    <p class="service">
+                      Straight razor shave
+                      <span class="price">from 200 uah.</span>
+                    </p>
                   </li>
                 </ul>
               </li>
-              <li class="prices-inner__item">
+              <li class="prices-inner__item prices-right__item">
                 <ul class="prices__list">
                   <li class="prices__item">
                     <div class="prices__info">
-                      <p class="service-name">Trainee’s haircut</p>
-                      <p class="service-price">from 50 uah.</p>
+                      <p class="service">
+                        Trainee’s haircut<span class="price">
+                          from 50 uah.</span
+                        >
+                      </p>
                     </div>
                   </li>
                   <li class="prices__item">
                     <div class="prices__info">
-                      <p class="service-name">Haircut under the nozzle</p>
-                      <p class="service-price">from 200 uah.</p>
+                      <p class="service">
+                        Haircut under the nozzle
+                        <span class="price">from 200 uah.</span>
+                      </p>
                     </div>
                   </li>
                   <li class="prices__item">
                     <div class="prices__info">
-                      <p class="service-name">Children’s haircut (0-12 y.o.)</p>
-                      <p class="service-price">from 300 uah.</p>
+                      <p class="service">
+                        Children’s haircut (0-12 y.o.)
+                        <span class="price">from 300 uah.</span>
+                      </p>
                     </div>
                   </li>
                   <li class="prices__item">
                     <div class="prices__info">
-                      <p class="service-name">Camouflage of gray hair</p>
-                      <p class="service-price">from 200 uah.</p>
+                      <p class="service">
+                        Camouflage of gray hair
+                        <span class="price">from 300 uah.</span>
+                      </p>
                     </div>
                   </li>
                 </ul>
@@ -195,7 +213,7 @@
           </div>
         </section>
         <!-- section Benefits -->
-        <section class="benefits__container">
+        <section class="benefits benefits__container">
           <ul class="benefits__list">
             <li class="benefits__item">
               <p class="benefits__value">600<sup>+</sup></p>
@@ -226,56 +244,58 @@
           </div>
         </section>
         <!-- section Team -->
-        <section class="team__container">
-          <p class="uppertitle">For true enjoyers of the atmosphere</p>
-          <h2 class="team__title">Our barbers</h2>
-          <ul class="team__list">
-            <li class="list-team__item">
-              <img
-                src="./image/team/img-1_740.jpg"
-                alt=""
-                width="320"
-                height="320"
-              />
-              <h3 class="name-barber">John Smith</h3>
-              <p class="position-baarber">Extreme Barber</p>
-              <ul class="social-list">
-                <li class="social-list__item">
-                  <a href="#" class="social__link"><img src="" alt="" /></a>
-                </li>
-              </ul>
-            </li>
-            <li class="list-team__item">
-              <img
-                src="./image/team/img-2_740.jpg"
-                alt=""
-                width="320"
-                height="320"
-              />
-              <h3 class="name-barber">Michele Doe</h3>
-              <p class="position-baarber">Extreme Barber</p>
-              <ul class="social-list">
-                <li class="social-list__item">
-                  <a href="#" class="social__link"><img src="" alt="" /></a>
-                </li>
-              </ul>
-            </li>
-            <li class="list-team__item">
-              <img
-                src="./image/team/img-3_740.jpg"
-                alt=""
-                width="320"
-                height="320"
-              />
-              <h3 class="name-barber">Alan Black</h3>
-              <p class="position-baarber">Extreme Barber</p>
-              <ul class="social-list">
-                <li class="social-list__item">
-                  <a href="#" class="social__link"><img src="" alt="" /></a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+        <section class="team">
+          <div class="team__container">
+            <p class="uppertitle">For true enjoyers of the atmosphere</p>
+            <h2 class="team__title">Our barbers</h2>
+            <ul class="team__list card-set">
+              <li class="list-team__item card-set-items">
+                <img
+                  src="./image/team/img-1_740.jpg"
+                  alt=""
+                  width="370"
+                  height="320"
+                />
+                <h3 class="name-barber">John Smith</h3>
+                <p class="position-barber">Extreme Barber</p>
+                <ul class="social-list">
+                  <li class="social-list__item">
+                    <a href="#" class="social__link"><img src="" alt="" /></a>
+                  </li>
+                </ul>
+              </li>
+              <li class="list-team__item card-set-items">
+                <img
+                  src="./image/team/img-2_740.jpg"
+                  alt=""
+                  width="370"
+                  height="320"
+                />
+                <h3 class="name-barber">Michele Doe</h3>
+                <p class="position-barber">Extreme Barber</p>
+                <ul class="social-list">
+                  <li class="social-list__item-items">
+                    <a href="#" class="social__link"><img src="" alt="" /></a>
+                  </li>
+                </ul>
+              </li>
+              <li class="list-team__item card-set-items">
+                <img
+                  src="./image/team/img-3_740.jpg"
+                  alt=""
+                  width="370"
+                  height="320"
+                />
+                <h3 class="name-barber">Alan Black</h3>
+                <p class="position-barber">Extreme Barber</p>
+                <ul class="social-list">
+                  <li class="social-list__item">
+                    <a href="#" class="social__link"><img src="" alt="" /></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </section>
         <!-- section Galerry  -->
         <section class="galerry__container">
@@ -283,8 +303,8 @@
           <p class="galerry__uppertitle uppertitle">
             In Latin, "barba" means "beard"
           </p>
-          <ul class="galerry__list">
-            <li class="list-galerry__item">
+          <ul class="galerry__list card-set">
+            <li class="list-galerry__item card-set-items">
               <img
                 src="./image/gallery/img-1_desk@1x.jpg"
                 alt=""
@@ -292,7 +312,7 @@
                 heigth="360"
               />
             </li>
-            <li class="list-galerry__item">
+            <li class="list-galerry__item card-set-items">
               <img
                 src="./image/gallery/img-2_desk@1x.jpg"
                 alt=""
@@ -300,7 +320,7 @@
                 heigth="360"
               />
             </li>
-            <li class="list-galerry__item">
+            <li class="list-galerry__item card-set-items">
               <img
                 src="./image/gallery/img-3_desk@1x.jpg"
                 alt=""
@@ -308,7 +328,7 @@
                 heigth="360"
               />
             </li>
-            <li class="list-galerry__item">
+            <li class="list-galerry__item card-set-items">
               <img
                 src="./image/gallery/img-4_desk@1x.jpg"
                 alt=""
@@ -318,17 +338,51 @@
             </li>
           </ul>
         </section>
-        <!-- section Booking-Contacts -->
-        <section class="booking-contacts__container">
-          <div class="booking-contacts__right">
-            <h2 class="contacts__title">Contacts</h2>
-            <adress class="contacts__info">
-              <a href="#" class="contacts__adress"
-                >st. Vasylkivska, 7A Kiev, 08132</a
-              >
-              <a href="#" class="contacts__tel">+38 044 111 11 11</a>
-              <a href="#" class="contacts__email">barbershop@email.com</a>
-            </adress>
+        <!-- sections Booking-Contacts -->
+        <div class="page-wrapper">
+          <section class="booking">
+            <h2 class="booking__title title-light">Online-booking</h2>
+            <form action="" class="booking-form card-set">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="NAME*"
+                class="card-set-items inp-name"
+              />
+              <input
+                type="tel"
+                name="tel"
+                id="tel"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                placeholder="PHONE*"
+                class="card-set-items inp-tel"
+              />
+              <input
+                type="text"
+                name="message"
+                id="message"
+                placeholder="message"
+                class="card-set-items inp-message"
+              />
+            </form>
+            <button class="btn btn-light" type="submit">send</button>
+          </section>
+          <section class="contacts">
+            <h2 class="contacts__title title-light">Contacts</h2>
+            <ul class="contacts__info">
+              <li class="contacts-link">
+                <a href="#" class="contacts__adress"
+                  >st. Vasylkivska, 7A Kiev, 08132</a
+                >
+              </li>
+              <li class="contacts-link">
+                <a href="#" class="contacts__tel">+38 044 111 11 11</a>
+              </li>
+              <li class="contacts-link">
+                <a href="#" class="contacts__email">barbershop@email.com</a>
+              </li>
+            </ul>
             <div class="schedule-info">
               <h3 class="contacts__uppertitle uppertitle">Working hours</h3>
               <p class="schedule__time">
@@ -336,8 +390,8 @@
                 <time datetime="09:00">22:00</time>
               </p>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </main>
       <footer class="footer">
         <div class="footer__container">

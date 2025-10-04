@@ -31,7 +31,7 @@ body {
 /* селектор атрибуту класу,  */
 [class*="__container"] {
   /* розширили контейнер на величину паддінгів зліва иа справа */
-  max-width: 1170px;
+  max-width: 1200px;
   padding-inline: 15px;
   margin: 0 auto;
 }
@@ -61,8 +61,14 @@ body {
   --accent-bg-clr: #ff6c00;
   --main-bg-clr: #ffffff;
   --secondary-bg-clr: #111319;
+
   --light-bg-clr: #f7f7f7;
-  --dark-bg-clr: #111319;
+  --dark-bg-clr: #090b13;
+  --dark-bg-grdnt: rgba(9, 11, 19, 0.2);
+  --semidark-bg-clr: rgba(23, 26, 36, 1);
+  --semidark-bg-grdnt: rgba(23, 26, 36, 0.2);
+  --indent: 30px;
+  --items: 3;
 }
 
 .btn {
@@ -73,8 +79,8 @@ body {
   line-height: 1.33;
   color: var(--secondary-txt-clr);
   text-transform: uppercase;
-  width: 160px;
-  height: 40px;
+  min-width: 160px;
+  min-height: 40px;
   padding: 12px 20px;
   border: 1px solid var(--accent-bg-clr);
   border-bottom-left-radius: 20px;
@@ -98,16 +104,31 @@ body {
   font-weight: 700;
   color: var(--secondary-txt-clr);
   font-size: 42px;
-  line-height: 49px;
-  padding-bottom: 44px;
+  line-height: 1;
+}
+
+.title-light {
+  color: var(--ligth-txt-clr);
+  margin-bottom: 44px;
 }
 
 .uppertitle {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   color: var(--secondary-txt-clr);
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
   text-transform: uppercase;
+}
+
+.uppertitle::before {
+  content: "";
+  display: inline-block;
+  width: 60px;
+  height: 1px;
+  background-color: var(--grey-txt-clr);
 }
 
 .slogan {
@@ -117,35 +138,69 @@ body {
   line-height: 1.67;
 }
 
+.card-set {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--indent);
+}
+
+/* від 100% ширини контейнера віднімаємо всі gap помножені на кільк елем -1 та ділимо на кільк елем */
+.card-set-items {
+  flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
+}
+
+.page-wrapper {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  background-color: var(--dark-bg-clr);
+  background-image: url(../image/contacts/bg-contacts.png);
+  /* при збільшенні кількості контенту зобр все рівно на всю висоту */
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* розміщує фон зобр по центру зі зміщенням на половину ширини зобр */
+  background-position: top left calc(50% + 393px);
+  padding: 120px 0;
+}
+
 /* HEADER ------------------------------ */
 
 .header {
+  padding-bottom: 19px;
+  padding-top: 19px;
 }
 .header__container {
-}
-.header__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+}
+.header__inner {
 }
 .header__logo {
+  margin-right: 124px;
 }
 .header__menu {
 }
-.header__nav-list {
+.nav-list {
   display: flex;
   gap: 30px;
+  margin-right: auto;
 }
 .nav-list {
 }
 .nav-list__item {
 }
 .nav-list__link {
+  display: block;
   font-family: Open Sans;
   font-weight: 600;
   font-size: 12px;
   line-height: 1;
   letter-spacing: 1.1%;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .nav-list__link:hover,
@@ -156,6 +211,9 @@ body {
 }
 
 .header-tel {
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 30px;
   font-weight: 600;
   font-size: 12px;
   line-height: 1;
@@ -184,7 +242,7 @@ body {
 .hero__social-item {
 }
 .hero__social-link {
-  color: var(--secondary-txt-clr);
+  color: var(--ligth-txt-clr);
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
@@ -261,10 +319,8 @@ body {
 
 .about {
   display: flex;
-  flex-direction: row;
   gap: 30px;
   padding: 120px 0;
-  flex-basis: 470px;
 }
 .about__galerry {
   display: flex;
@@ -272,12 +328,15 @@ body {
   flex-basis: 570px;
 }
 .about_content-block {
-  flex-basis: 470px;
+  /* flex-basis: 470px; */
+  width: 470px;
 }
 .about__uppertitle {
+  margin-bottom: 20px;
 }
 
 .about__title {
+  margin-bottom: 20px;
 }
 
 .about__slogan {
@@ -285,11 +344,13 @@ body {
   font-size: 18px;
   color: var(--grey-txt-clr);
   line-height: 1.67;
+  margin-bottom: 20px;
 }
 .about__text {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.86;
+  margin-bottom: 42px;
 }
 .header__btn {
 }
@@ -299,29 +360,88 @@ body {
 /* PRICES ------------------------- */
 
 .prices {
+  max-width: 1600px;
   padding: 120px 0;
-  background-color: var(--dark-bg-clr);
+  margin: 0 auto;
+  background-color: var(--secondary-bg-clr);
+  background-image: url(../image/price/bg-img.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  block-size: contain;
 }
 .prices__uppertitle {
   color: var(--grey-txt-clr);
+  margin-bottom: 20px;
 }
 
 .prices__title {
   color: var(--ligth-txt-clr);
+  margin-bottom: 44px;
 }
 
 .prices__inner {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 44px;
 }
+
 .prices-inner__item {
+  flex-basis: 570px;
+  /* outline: 1px solid orange; */
+  padding: 30px 20px;
 }
+
+.prices-left__item {
+  background-image: linear-gradient(
+    to bottom,
+    var(--semidark-bg-grdnt),
+    var(--semidark-bg-clr)
+  );
+}
+
+.prices-right__item {
+  background-image: linear-gradient(
+    to bottom,
+    var(--dark-bg-grdnt),
+    var(--dark-bg-clr)
+  );
+}
+
 .prices__list {
 }
+
 .prices__item {
   color: var(--grey-txt-clr);
 }
-.service-name {
+
+.service {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-direction: row-reverse;
 }
-.service-price {
+
+.service::before {
+  flex-grow: 1;
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: var(--grey-txt-clr);
+}
+
+.price {
+  order: -1;
+}
+
+.prices__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+.service {
+  margin-right: auto;
+}
+.price {
+  display: inline-block;
 }
 .prices__info {
 }
@@ -333,14 +453,196 @@ body {
 
 /* BENEFITS ------------------------ */
 
+.benefits {
+  display: flex;
+}
+
+.benefits__container {
+  padding: 120px 0;
+}
+.benefits__list {
+}
+.benefits__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 170px;
+  background-color: #f7f7f7;
+}
+.benefits__value {
+  font-size: 42px;
+  font-weight: 700;
+}
+.benefits__desc {
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  width: 122px;
+}
+.benefits__content-block {
+}
+.benefits__uppertitle {
+  margin-bottom: 20px;
+}
+.uppertitle {
+}
+.benefits__title {
+  line-height: 1.17;
+  margin-bottom: 20px;
+}
+.benefits__slogan {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.67;
+  max-width: 500px;
+}
+
 /* TEAM ---------------------------- */
+
+.team {
+  max-width: 1600px;
+  margin: 0 auto;
+  background-color: var(--light-bg-clr);
+  padding: 120px 0;
+}
+.team__container {
+}
+.uppertitle {
+  margin-bottom: 20px;
+}
+.team__title {
+  margin-bottom: 44px;
+}
+/* .team__list {
+  display: flex;
+  gap: 30px;
+} */
+.list-team__item {
+}
+.name-barber {
+  text-align: center;
+  margin-bottom: 3px;
+}
+.position-barber {
+  text-align: center;
+}
+.social-list {
+}
+.social-list__item {
+}
+.social__link {
+}
 
 /* GALERRY ------------------------- */
 
-/* BOOKOING-CONTACTS ---------------- */
+.galerry__container {
+  padding: 120px 15px;
+}
+.gallerry__title {
+}
+.visually-hidden {
+}
+.galerry__uppertitle {
+  margin-bottom: 44px;
+}
+.uppertitle {
+}
+.galerry__list {
+  --items: 4;
+
+  /* justify-content: center;
+  justify-self: center; */
+}
+
+/* .list-galerry__item:before,
+.list-galerry__item:after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width: 300px;
+  background: #777;
+  box-shadow: 0 15px 10px #777;
+  transform: rotate(-3deg);
+} */
+
+/* BOOKING ---------------- */
+
+.booking {
+  flex-basis: 570px;
+}
+
+.booking__title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+label {
+  color: var(--ligth-txt-clr);
+}
+.booking-form {
+  --items: 2;
+  row-gap: 44px;
+  margin-bottom: 44px;
+}
+
+.booking-form > input {
+  background-color: transparent;
+  border-bottom: 1px solid var(--grey-txt-clr);
+  border-right: transparent;
+  border-left: transparent;
+  border-top: transparent;
+  outline: transparent;
+  color: var(--grey-txt-clr);
+}
+
+.booking-form > input:hover,
+.booking-form > input:focus {
+  border-bottom: 1px solid var(--accent-bg-clr);
+}
+
+.inp-name {
+  max-width: 270px;
+}
+
+.inp-tel {
+  max-width: 270px;
+}
+
+.inp-message {
+  min-width: 570px;
+}
+
+.booking-form > input::placeholder {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.36;
+  text-transform: uppercase;
+}
+/* CONTACTS --------------- */
+
+.contacts {
+  flex-basis: 570px;
+
+  padding-left: 100px;
+}
+
+.contacts__title {
+}
 
 .contacts__uppertitle {
   color: var(--grey-txt-clr);
+  margin-bottom: 20px;
+}
+
+.contacts__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 72px;
 }
 
 .contacts__adress {
@@ -348,11 +650,13 @@ body {
   font-weight: 700;
   line-height: 1.67;
   color: var(--grey-txt-clr);
+  max-width: 171px;
 }
 
 .contacts__tel,
 .contacts__email,
 .schedule__time {
+  display: block;
   font-size: 18px;
   line-height: 1.67;
   color: var(--grey-txt-clr);
@@ -361,8 +665,12 @@ body {
 /* FOOTER --------------------------- */
 
 .footer {
+  padding: 52px 0;
 }
 .footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 .copyrigth-block {
 }
@@ -373,6 +681,8 @@ body {
   color: var(--grey-txt-clr);
 }
 .footer__social-list {
+  display: flex;
+  gap: 40px;
 }
 .footer__social-item {
 }
@@ -381,4 +691,9 @@ body {
   font-weight: 600;
   line-height: 1.37;
   color: var(--grey-txt-clr);
+}
+
+.footer__social-link:hover,
+.footer__social-link:focus {
+  color: var(--accent-txt-clr);
 }
