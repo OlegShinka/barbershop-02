@@ -33,17 +33,13 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
-              class="header__logo"
-              src="./image/header/logo.svg"
-              alt="logo"
-              width="76"
-              heigth="76"
-            />
+            <svg class="logo" width="76" height="76">
+              <use href="./image/svg/icons.svg#logo"></use>
+            </svg>
           </a>
           <ul class="header__nav-list nav-list">
             <li class="nav-list__item">
-              <a href="#" class="nav-list__link">About</a>
+              <a href="#" class="nav-list__link active">About</a>
             </li>
             <li class="nav-list__item">
               <a href="#" class="nav-list__link">Services and prices</a>
@@ -62,44 +58,48 @@
       <main class="main">
         <!-- section Hero -->
         <section class="hero__container hero">
-          <ul class="hero__social-list">
-            <li class="hero__social-item">
-              <a
-                href="#"
-                class="hero__social-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Instagram</a
-              >
-            </li>
-            <li class="hero__social-item">
-              <a
-                href="#"
-                class="hero__social-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Youtube</a
-              >
-            </li>
-          </ul>
-          <p class="hero__uppertitle uppertitle">
-            A hair salon for men in Kyiv
-          </p>
-          <h1 class="hero__title title">BarberShop</h1>
-          <p class="hero__text">
-            We are experts in trendy men’s haircuts. We work quickly, carefully
-            and with style.
-          </p>
-          <ul class="hero__btn-list">
-            <li class="btn-hero_item">
-              <button type="button" class="hero__btn">Back</button>
-            </li>
-            <li class="btn-hero_item">
-              <button type="button" class="hero__btn btn-light btn-right">
-                Forward
-              </button>
-            </li>
-          </ul>
+          <div class="hero__left-side">
+            <ul class="hero__social-list">
+              <li class="hero__social-item">
+                <a
+                  href="#"
+                  class="hero__social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Instagram</a
+                >
+              </li>
+              <li class="hero__social-item">
+                <a
+                  href="#"
+                  class="hero__social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Youtube</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="hero__right-side">
+            <p class="hero__uppertitle uppertitle">
+              A hair salon for men in Kyiv
+            </p>
+            <h1 class="hero__title title">BarberShop</h1>
+            <p class="hero__text">
+              We are experts in trendy men’s haircuts. We work quickly,
+              carefully and with style.
+            </p>
+            <ul class="hero__btn-list">
+              <li class="btn-hero_item">
+                <button type="button" class="hero__btn">Back</button>
+              </li>
+              <li class="btn-hero_item">
+                <button type="button" class="hero__btn btn-light btn-right">
+                  Forward
+                </button>
+              </li>
+            </ul>
+          </div>
         </section>
         <!-- section About -->
         <section class="about__container about">
@@ -135,7 +135,7 @@
               always "on the same wave" with clients. Therefore, we are always
               ready to improve everyone who comes to us!
             </p>
-            <button class="header__btn btn">Online-booking</button>
+            <button class="btn">Online-booking</button>
           </div>
         </section>
         <!-- section Prices -->
@@ -214,20 +214,20 @@
         </section>
         <!-- section Benefits -->
         <section class="benefits benefits__container">
-          <ul class="benefits__list">
-            <li class="benefits__item">
+          <ul class="benefits__list card-set">
+            <li class="benefits__item card-set-items">
               <p class="benefits__value">600<sup>+</sup></p>
               <p class="benefits__desc">Satisfied customers per day</p>
             </li>
-            <li class="benefits__item">
+            <li class="benefits__item card-set-items">
               <p class="benefits__value">50<sup>+</sup></p>
               <p class="benefits__desc">Awards for excellent service</p>
             </li>
-            <li class="benefits__item">
+            <li class="benefits__item card-set-items">
               <p class="benefits__value">20<sup>+</sup></p>
               <p class="benefits__desc">Kyiv’s best professional barbers</p>
             </li>
-            <li class="benefits__item">
+            <li class="benefits__item card-set-items">
               <p class="benefits__value">100<sup>+</sup></p>
               <p class="benefits__desc">Gifts for regular customers</p>
             </li>
@@ -250,22 +250,57 @@
             <h2 class="team__title">Our barbers</h2>
             <ul class="team__list card-set">
               <li class="list-team__item card-set-items">
-                <img
-                  src="./image/team/img-1_740.jpg"
-                  alt=""
-                  width="370"
-                  height="320"
-                />
+                <div class="card-thumb">
+                  <img
+                    class="img-barber"
+                    src="./image/team/img-1_740.jpg"
+                    alt=""
+                    width="370"
+                    height="320"
+                  />
+                  <div class="overlay">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Sit molestiae est eligendi sed libero debitis, aperiam
+                    cupiditate esse ratione. Alias minus voluptatem ut iusto
+                    dicta animi distinctio molestiae earum ullam.
+                  </div>
+                </div>
                 <h3 class="name-barber">John Smith</h3>
                 <p class="position-barber">Extreme Barber</p>
                 <ul class="social-list">
                   <li class="social-list__item">
-                    <a href="#" class="social__link"><img src="" alt="" /></a>
+                    <a href="#" class="social-link" aria-label="icon">
+                      <svg class="social-icon" width="20" height="20">
+                        <use href="./image/svg/icons.svg#instagram"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="social-list__item">
+                    <a href="#" class="social-link" aria-label="icon">
+                      <svg class="social-icon" width="20" height="20">
+                        <use href="./image/svg/icons.svg#twitter"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="social-list__item">
+                    <a href="#" class="social-link" aria-label="icon">
+                      <svg class="social-icon" width="20" height="20">
+                        <use href="./image/svg/icons.svg#facebook"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="social-list__item">
+                    <a href="#" class="social-link" aria-label="icon">
+                      <svg class="social-icon" width="20" height="20">
+                        <use href="./image/svg/icons.svg#linkedin"></use>
+                      </svg>
+                    </a>
                   </li>
                 </ul>
               </li>
               <li class="list-team__item card-set-items">
                 <img
+                  class="img-barber"
                   src="./image/team/img-2_740.jpg"
                   alt=""
                   width="370"
@@ -274,13 +309,39 @@
                 <h3 class="name-barber">Michele Doe</h3>
                 <p class="position-barber">Extreme Barber</p>
                 <ul class="social-list">
-                  <li class="social-list__item-items">
-                    <a href="#" class="social__link"><img src="" alt="" /></a>
+                  <li class="social-list__item">
+                    <a href="#" class="social-link" aria-label="icon">
+                      <svg class="social-icon" width="20" height="20">
+                        <use href="./image/svg/icons.svg#instagram"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="social-list__item">
+                    <a href="#" class="social-link" aria-label="icon">
+                      <svg class="social-icon" width="20" height="20">
+                        <use href="./image/svg/icons.svg#twitter"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="social-list__item">
+                    <a href="#" class="social-link" aria-label="icon">
+                      <svg class="social-icon" width="20" height="20">
+                        <use href="./image/svg/icons.svg#facebook"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="social-list__item">
+                    <a href="#" class="social-link" aria-label="icon">
+                      <svg class="social-icon" width="20" height="20">
+                        <use href="./image/svg/icons.svg#linkedin"></use>
+                      </svg>
+                    </a>
                   </li>
                 </ul>
               </li>
               <li class="list-team__item card-set-items">
                 <img
+                  class="img-barber"
                   src="./image/team/img-3_740.jpg"
                   alt=""
                   width="370"
@@ -290,7 +351,32 @@
                 <p class="position-barber">Extreme Barber</p>
                 <ul class="social-list">
                   <li class="social-list__item">
-                    <a href="#" class="social__link"><img src="" alt="" /></a>
+                    <a href="#" class="social-link" aria-label="icon">
+                      <svg class="social-icon" width="20" height="20">
+                        <use href="./image/svg/icons.svg#instagram"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="social-list__item">
+                    <a href="#" class="social-link" aria-label="icon">
+                      <svg class="social-icon" width="20" height="20">
+                        <use href="./image/svg/icons.svg#twitter"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="social-list__item">
+                    <a href="#" class="social-link" aria-label="icon">
+                      <svg class="social-icon" width="20" height="20">
+                        <use href="./image/svg/icons.svg#facebook"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="social-list__item">
+                    <a href="#" class="social-link" aria-label="icon">
+                      <svg class="social-icon" width="20" height="20">
+                        <use href="./image/svg/icons.svg#linkedin"></use>
+                      </svg>
+                    </a>
                   </li>
                 </ul>
               </li>
@@ -372,14 +458,23 @@
             <h2 class="contacts__title title-light">Contacts</h2>
             <ul class="contacts__info">
               <li class="contacts-link">
+                <svg class="icon-contacts" width="32" height="32">
+                  <use href="./image/svg/symbol-defs.svg#map-pin"></use>
+                </svg>
                 <a href="#" class="contacts__adress"
                   >st. Vasylkivska, 7A Kiev, 08132</a
                 >
               </li>
               <li class="contacts-link">
+                <svg class="icon-contacts" width="32" height="32">
+                  <use href="./image/svg/symbol-defs.svg#phone"></use>
+                </svg>
                 <a href="#" class="contacts__tel">+38 044 111 11 11</a>
               </li>
               <li class="contacts-link">
+                <svg class="icon-contacts" width="32" height="32">
+                  <use href="./image/svg/symbol-defs.svg#mail"></use>
+                </svg>
                 <a href="#" class="contacts__email">barbershop@email.com</a>
               </li>
             </ul>
@@ -420,6 +515,15 @@
           </ul>
         </div>
       </footer>
+      <div class="backdrop visually-hidden">
+        <div class="popup">
+          <button type="button" class="close-btn">
+            <svg class="icon-close" width="12" height="12">
+              <use href="./image/svg/icons.svg#stand-by"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
   </body>
 </html>
